@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ContactInfoActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolcustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppThemeActionBarStyle"
+        app:title="@string/app_name"
+        app:titleTextColor="?attr/colorOnPrimary" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="right|bottom"
+        android:src="@drawable/ic_baseline_chat_24"
+        android:background="?attr/colorPrimary" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goTalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="right|bottom"
+        android:src="@drawable/ic_phone_white_24"
+        android:background="?attr/colorPrimary" />
+
+
+    <TextView
+        android:id="@+id/NamFirstView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolcustom"
+        android:layout_marginTop="37dp"
+        android:fontFamily="sans-serif"
+        android:text="Ганнибал Лектор"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/MailView"
+        android:layout_width="308dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/PhoneView"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/MailViewPic"
+        android:text="come2me@psy.ru"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/PhoneView"
+        android:layout_width="308dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/NamFirstView"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/PhoneViewPic"
+        android:text="0123456789"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/AddressView"
+        android:layout_width="308dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MailView"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/AddressViewPic"
+        android:text="Алькатрас"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/PhoneViewPic"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/NamFirstView"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
+
+    <ImageView
+        android:id="@+id/MailViewPic"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/PhoneViewPic"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:srcCompat="@drawable/ic_baseline_alternate_email_24" />
+
+    <ImageView
+        android:id="@+id/AddressViewPic"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MailViewPic"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:srcCompat="@drawable/ic_baseline_location_city_24" />
+
+</RelativeLayout>

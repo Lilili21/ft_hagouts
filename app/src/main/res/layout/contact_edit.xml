@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ContactEditActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolcustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppThemeActionBarStyle"
+        app:title="@string/app_name"
+        app:titleTextColor="?attr/colorOnPrimary" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolcustom"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <EditText
+        android:id="@+id/EtFirst"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolcustom"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/imageView4"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/dark"
+        android:textColorHint="#696969"
+        android:backgroundTint="#696969"/>
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EtFirst"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/imageView4"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/dark"
+        android:textColorHint="#696969"
+        android:backgroundTint="#696969"/>
+
+    <EditText
+        android:id="@+id/Phone"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Name"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/PhonePic"
+        android:ems="10"
+        android:inputType="phone"
+        android:textColor="@color/dark"
+        android:textColorHint="#696969"
+        android:backgroundTint="#696969"/>
+
+    <ImageView
+        android:id="@+id/PhonePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="107dp"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
+
+    <EditText
+        android:id="@+id/EtEmail"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phone"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/EmailPic"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/dark"
+        android:textColorHint="#696969"
+        android:backgroundTint="#696969"/>
+
+    <ImageView
+        android:id="@+id/EmailPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PhonePic"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="43dp"
+        app:srcCompat="@drawable/ic_baseline_alternate_email_24" />
+
+    <EditText
+        android:id="@+id/Address"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EtEmail"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="22dp"
+        android:layout_toEndOf="@+id/AddressPic"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:textColor="@color/dark"
+        android:textColorHint="#696969"
+        android:backgroundTint="#696969"/>
+
+    <ImageView
+        android:id="@+id/AddressPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EmailPic"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="43dp"
+        app:srcCompat="@drawable/ic_baseline_location_city_24" />
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ft_hangouts</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="changeTheme">"Change theme"</string>
+    <string name="new_page">"Create contact"</string>
+    <string name="save">"Save"</string>
+    <string name="first">"Name"</string>
+    <string name="last">"Surname"</string>
+    <string name="phone">"Phone"</string>
+    <string name="mail">E-mail</string>
+    <string name="address">"Address"</string>
+    <string name="cancel">Cancel</string>
+    <string name="nameError">"Fill the name information."</string>
+    <string name="surnameError">"Fill the surname information."</string>
+    <string name="phoneError">"Phone number should contain 10 numbers."</string>
+    <string name="mailError">"Fill the e-mail."</string>
+    <string name="postalError">"Fill the name address. "</string>
+    <string name="editContact">"Change contact. "</string>
+    <string name="smsSend">"Send sms. "</string>
+    <string name="delete">delete</string>
+    <string name="color_green">green</string>
+    <string name="color_blue">blue</string>
+    <string name="color_brown">brown</string>
+    <string name="color_yellow">yellow</string>
+    <string name="color_grey">grey</string>
+</resources>
