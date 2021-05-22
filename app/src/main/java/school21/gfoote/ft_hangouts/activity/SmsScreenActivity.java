@@ -31,7 +31,7 @@ import school21.gfoote.ft_hangouts.model.SmsInfo;
 public class SmsScreenActivity extends AppCompatActivity {
 
     private SmsDb smsDb;
-    private SmsInfo smsInfo;
+    private String smsInfoNumber;
     private List<SmsInfo> smsList;
 
     private ContactDb contactDb;
@@ -50,7 +50,8 @@ public class SmsScreenActivity extends AppCompatActivity {
     private BroadcastReceiver intentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getExtras().getString("number").equals(smsInfo.getPhone())) {
+            String number = intent.getExtras().getString("number").replaceAll("[^\\d.]", "");
+            if (number.equals(smsInfoNumber)) {
                 setList();
             }
         }
@@ -77,7 +78,7 @@ public class SmsScreenActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolcustom);
         toolbar.setTitle(contactInfo.getFirstName() + " " + contactInfo.getLastName());
          setSupportActionBar(toolbar);
-
+        this.smsInfoNumber = contactInfo.getPhone();
         Ib1 = findViewById(R.id.smsButton);
         Ib1.setOnClickListener(new View.OnClickListener() {
             @Override

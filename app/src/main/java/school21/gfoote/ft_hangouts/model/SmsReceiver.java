@@ -27,7 +27,7 @@ public class SmsReceiver extends BroadcastReceiver {
                     messages[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
                     sb.append(messages[i].getMessageBody());
                 }
-                String sender = messages[0].getOriginatingAddress();
+                String sender = messages[0].getOriginatingAddress().replaceAll("[^\\d.]", "");
                 String message = sb.toString();
                 smsDb = new SmsDb(context);
                 smsDb.newSms(sender, message, "other");
