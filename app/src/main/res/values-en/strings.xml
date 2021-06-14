@@ -13,7 +13,7 @@
     <string name="cancel">Cancel</string>
     <string name="nameError">"Fill the name information."</string>
     <string name="surnameError">"Fill the surname information."</string>
-    <string name="phoneError">"Phone number should contain 10 numbers."</string>
+    <string name="phoneError">"Phone number should contain 11 numbers."</string>
     <string name="mailError">"Fill the e-mail."</string>
     <string name="postalError">"Fill the name address. "</string>
     <string name="editContact">"Change contact. "</string>

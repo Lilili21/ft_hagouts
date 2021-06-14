@@ -13,7 +13,7 @@
     <string name="cancel">Отмена</string>
 
     <string name="nameError">Заполните имя.</string>
-    <string name="phoneError">Телефонный номер должен состоять из 10 цифр.</string>
+    <string name="phoneError">Телефонный номер должен состоять из 11 цифр.</string>
     <string name="mailError">Заполните e-mail.</string>
     <string name="postalError">Заполните адрес.</string>
     <string name="surnameError">Заполните фамилию.</string>

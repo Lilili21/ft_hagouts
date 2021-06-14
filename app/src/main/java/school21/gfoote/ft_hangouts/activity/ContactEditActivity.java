@@ -8,11 +8,12 @@ import android.widget.EditText;
 
 import school21.gfoote.ft_hangouts.R;
 import school21.gfoote.ft_hangouts.dataBase.ContactDb;
-import school21.gfoote.ft_hangouts.dataBase.SmsDb;
 import school21.gfoote.ft_hangouts.model.ContactInfo;
+import school21.gfoote.ft_hangouts.utils.MaskWatcher;
 
 public class ContactEditActivity extends AppMCompatActivity {
     private EditText surname, name, phone, mail, address;
+    private MaskWatcher mPhoneMaskWatcher;
     private long contactOrder;
 
     @Override
@@ -37,6 +38,8 @@ public class ContactEditActivity extends AppMCompatActivity {
         surname = findViewById(R.id.Name);
         name = findViewById(R.id.EtFirst);
         phone = findViewById(R.id.Phone);
+        mPhoneMaskWatcher = new MaskWatcher(phone);
+        phone.addTextChangedListener(mPhoneMaskWatcher);
         mail = findViewById(R.id.EtEmail);
         address = findViewById(R.id.Address);
     }

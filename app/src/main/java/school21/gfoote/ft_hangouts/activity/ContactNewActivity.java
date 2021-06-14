@@ -7,14 +7,19 @@ import android.widget.EditText;
 
 import school21.gfoote.ft_hangouts.R;
 import school21.gfoote.ft_hangouts.dataBase.ContactDb;
+import school21.gfoote.ft_hangouts.utils.MaskWatcher;
 
 public class ContactNewActivity extends AppMCompatActivity {
-    private EditText First, Name, Phone, Mail, Address;
+    private EditText    First, Name, Phone, Mail, Address;
+    private MaskWatcher mPhoneMaskWatcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_new);
+        Phone = findViewById(R.id.TePhone);
+        mPhoneMaskWatcher = new MaskWatcher(Phone);
+        Phone.addTextChangedListener(mPhoneMaskWatcher);
         super.onCreateToolBar();
     }
 
@@ -33,7 +38,7 @@ public class ContactNewActivity extends AppMCompatActivity {
 
         First = findViewById(R.id.TeFirst);
         Name = findViewById(R.id.TeName);
-        Phone = findViewById(R.id.TePhone);
+
         Mail = findViewById(R.id.TeEmail);
         Address = findViewById(R.id.TePostal);
         err = 1;
@@ -45,7 +50,7 @@ public class ContactNewActivity extends AppMCompatActivity {
             Name.setError(getString(R.string.surnameError));
             err = -1;
         }
-        if (Phone.getText().toString().replaceAll("[^\\d.]", "").length() == 0) {
+        if (Phone.getText().toString().replaceAll("[^\\d.]", "").length() != 11) {
             Phone.setError(getString(R.string.phoneError));
             err = -1;
         }
