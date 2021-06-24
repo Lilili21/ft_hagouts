@@ -11,7 +11,6 @@ import school21.gfoote.ft_hangouts.dataBase.ContactDb;
 public class AppMCompatActivity extends AppCompatActivity {
     protected ContactDb contactDb;
 
-
     protected void onCreateToolBar() {
         Toolbar toolbar = findViewById(R.id.toolcustom);
         setSupportActionBar(toolbar);

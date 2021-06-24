@@ -15,12 +15,12 @@ public class ContactDb extends DbManager {
         super (context);
     }
 
-    public void newContact(String first, String name, String phone, String mail, String address) {
+    public void newContact(String first, String name, String phone, String mail, String address, String photoUri) {
         if (contactExist(phone))
             throw new RuntimeException("Contact already exist");
         name.replace("'", "''");
         String parameters = "'" + first + "', '" + name + "', '" + phone + "', '"
-                + mail + "', '" + address + "'";
+                + mail + "', '" + address + "', '" + photoUri + "'";
         this.getWritableDatabase().execSQL( UtilsDb.INSERT_ELEM(ContactInfo.ContactDbFormat(),parameters));
     }
 
@@ -32,7 +32,7 @@ public class ContactDb extends DbManager {
         while (! cursor.isAfterLast())
         {
             ContactInfo data = new ContactInfo(cursor.getInt(0), cursor.getString(1),
-                    cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                    cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
             contacts.add(data);
             cursor.moveToNext();
         }
@@ -67,7 +67,7 @@ public class ContactDb extends DbManager {
             i++;
         }
         ContactInfo data = new ContactInfo(cursor.getInt(0), cursor.getString(1),
-                cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
         cursor.close();
         return data;
     }
@@ -86,10 +86,10 @@ public class ContactDb extends DbManager {
         return nameReturn;
     }
 
-    public void modifyContact(int id, String first, String name, String phone, String mail, String address) {
+    public void modifyContact(int id, String first, String name, String phone, String mail, String address, String photo) {
         String parameters = "firstName = '" + first + "', lastName = '" + name +
                 "', phone = '" + phone + "', mail = '"
-                + mail + "', address = '" + address + "'";
+                + mail + "', address = '" + address + "', photo = '" + photo +"'";
 
         this.getWritableDatabase().execSQL( UtilsDb.UPDATE_ELEM(tableName, parameters, new String[]{"id", String.valueOf(id)}) );
     }

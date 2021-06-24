@@ -11,7 +11,8 @@ public class UtilsDb {
             + "LastName text not null,"
             + "Phone text not null,"
             + "Mail text not null,"
-            + "Address text"
+            + "Address text,"
+            + "Photo text"
             + ")";
     protected static final String CREATE_SMS_TABLE =  "create table Sms ("
             +   "Id integer primary key autoincrement,"

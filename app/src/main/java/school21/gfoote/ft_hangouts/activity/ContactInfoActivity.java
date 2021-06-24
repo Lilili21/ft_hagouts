@@ -3,16 +3,19 @@ package school21.gfoote.ft_hangouts.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.net.Uri;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import school21.gfoote.ft_hangouts.R;
@@ -24,6 +27,8 @@ public class ContactInfoActivity extends AppMCompatActivity {
     private FloatingActionButton goChat, goTalk;
     private TextView fio, phone, mail, address;
     private long contactOrder;
+    private ImageView contactPhoto;
+
     ContactInfo contact;
 
     @Override
@@ -51,7 +56,7 @@ public class ContactInfoActivity extends AppMCompatActivity {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.SEND_SMS,
-                    Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS, Manifest.permission.CALL_PHONE}, 1000);
+                    Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS, Manifest.permission.CALL_PHONE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
 
         goTalk = findViewById(R.id.goTalk);
         goTalk.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +73,18 @@ public class ContactInfoActivity extends AppMCompatActivity {
         phone = findViewById(R.id.PhoneView);
         mail = findViewById(R.id.MailView);
         address = findViewById(R.id.AddressView);
+
+    }
+
+    private void setContactPhoto() {
+        contactPhoto = findViewById(R.id.photo);
+        String contactPhotoUri = "content://media" + contact.getPhoto();
+        if (!contact.getPhoto().equals("null")) {
+            Glide.with(ContactInfoActivity.this)
+                    .load(contactPhotoUri)
+                    .apply(RequestOptions.centerCropTransform())
+                    .into(contactPhoto);
+        }
     }
 
     public void setTextView() {
@@ -81,6 +98,7 @@ public class ContactInfoActivity extends AppMCompatActivity {
                 phoneNum.substring(7, 11)));
         mail.setText(contact.getMail());
         address.setText(contact.getAddress());
+        setContactPhoto();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

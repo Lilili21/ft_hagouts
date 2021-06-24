@@ -7,14 +7,16 @@ public class ContactInfo {
     private String phone;
     private String mail;
     private String address;
+    private String photo;
 
-    public ContactInfo(int id, String firstName, String lastName, String phone, String mail, String address) {
+    public ContactInfo(int id, String firstName, String lastName, String phone, String mail, String address, String photo) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.mail = mail;
         this.address = address;
+        this.photo = photo;
     }
 
     public int getId() {
@@ -65,7 +67,15 @@ public class ContactInfo {
         this.address = address;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     public static String ContactDbFormat(){
-        return "Contact (firstName, lastName, phone, mail, address)";
+        return "Contact (firstName, lastName, phone, mail, address, photo)";
     }
 }

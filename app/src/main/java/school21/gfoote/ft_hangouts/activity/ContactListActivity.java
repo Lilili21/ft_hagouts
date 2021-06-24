@@ -1,9 +1,7 @@
 package school21.gfoote.ft_hangouts.activity;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,6 +38,7 @@ public class ContactListActivity extends AppMCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1000 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
             finish();
         }
